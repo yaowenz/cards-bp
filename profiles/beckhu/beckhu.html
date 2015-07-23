@@ -1,0 +1,47 @@
+<style>
+body {color:white;font-family:'微软雅黑';font-size:14px}
+.clearfix {clear:both!important;float:none!important}
+.content {padding:50px 15px 0px 15px}
+.avatar-row div {float:left}
+.avatar-row .name {height:75px;margin-left:15px;padding-left:15px;margin-top:2px;border-left:3px solid white}
+.avatar-row .name ul li {line-height:1.6rem;font-size:1.1rem}
+ul {margin:0px;padding:0px;list-style:none}
+.company a {color:white;text-decoration:none}
+.company a:focus {color:white;text-decoration:underline}
+
+</style>
+<div class="content" style="background:url('profiles/beckhu/bg.jpg') no-repeat;background-size:cover;height:100%;width:100%">
+	<div class="avatar-row">
+		<div class="avatar">
+			<img src="profiles/beckhu/avatar.png" width="80" />
+		</div>
+		<div class="name">
+			<ul>
+				<li>Beck Hu</li>				
+				<li>胡强</li>
+				<li>董事总经理</li>
+			</ul>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="company">
+		<div class="company-title">上海贝圣品铂金商业地产顾问设计有限公司</div>
+		<div class="company-title">Biz Principle (BP)</div>
+		<ul class="company-info">
+			<li>手机：<a href="tel:+8615800510138">+86 15800510138</a></li>
+			<li>座机：<a href="tel:02160761201">021 60761201</a></li>
+			<li>邮箱：<a href="mailto:beck.hu@biz-principle.com">beck.hu@biz-principle.com</a></li>
+			<li>地址：中国上海徐汇区宝庆路8号3楼</li>
+		</ul>
+	</div>
+	<div id="map-location"></div>
+</div>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("map-location");  // 创建Map实例
+	map.centerAndZoom("上海", 15);      // 初始化地图,用城市名设置地图中心点
+  	var local = new BMap.LocalSearch(map, {
+		renderOptions:{map: map}
+	});
+	local.search("上海徐汇区宝庆路8号3楼");
+</script>
