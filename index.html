@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Beck Hu 胡强 的名片</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
 		<!-- 
@@ -13,16 +13,18 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/profile.css">
         <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="js/vendor/jsmodal-dark.css">
         <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=g1pvsDPq9KStUMAA2xwIE7Wf"></script>
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script src="js/vendor/jsmodal-1.0d.min.js"></script>        
         <script src="js/vendor/jquery-1.11.3.min.js"></script>
         <script src="js/vendor/angular.min.js"></script>        
-         <script src="js/vendor/angular-route.min.js"></script>
+        <script src="js/vendor/angular-route.min.js"></script>
         <script src="js/plugins.js"></script>    
         <script src="js/app.js"></script>    
     </head>
     <body>
-		<div ng-view id="profile"></div>
+    	<div ng-view id="profile"></div>
 		<script type="text/javascript">
 		jQuery(function($) {
 			angular.bootstrap(document, ['cardsApp']);
