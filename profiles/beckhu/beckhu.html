@@ -26,6 +26,7 @@ div.buttons ul li {display:inline-block;width:60px;border:1px solid white;border
 .btn-map {background-position:0px -166px}
 #map-location {width:100%;height:300px}
 #modal-content {padding:5px!important}
+p.android, p.iphone {text-align:center!important;color:#666!important;font-size:10px}
 #footer {position:absolute;bottom:0px;height:30px;background:#e30013 url('profiles/beckhu/bg-footer.jpg') no-repeat;width:100%;background-size:100% auto;background-position:center}
 
 /** iPhone 4S */
@@ -77,14 +78,14 @@ div.buttons ul li {display:inline-block;width:60px;border:1px solid white;border
 		<ul class="company-info">
 			<li>手机：<a href="tel:+8615800510138">+86 15800510138</a></li>
 			<li>座机：<a href="tel:02160761201">021 60761201</a></li>
-			<li>邮箱：<a href="mailto:beck.hu@biz-principle.com">beck.hu@biz-principle.com</a></li>
+			<li>邮箱：<a href="javascript:;" onclick="openEmailDialog()">beck.hu@biz-principle.com</a></li>
 			<li>地址：中国上海徐汇区宝庆路8号3楼</li>
 		</ul>
 	</div>
 	<div class="buttons">
 		<ul>
 			<li><a href="tel:+8615800510138"><span class="btn-tel"></span></a></li>
-			<li><a href="mailto:beck.hu@biz-principle.com"><span class="btn-mail"></span></a></li>
+			<li><a href="javascript:;" onclick="openEmailDialog()"><span class="btn-mail"></span></a></li>
 			<li><span class="btn-wx" onclick="openWXDialog();"></span></li>
 			<li><span class="btn-map" onclick="openMapDialog();"></span></li>
 		</ul>	
@@ -101,11 +102,33 @@ div.buttons ul li {display:inline-block;width:60px;border:1px solid white;border
 	</div>		
 </div>
 <div id="footer"></div>
-<div class="hidden" id="dialog-qrcode">
+<div class="hidden" id="dialog-qrcode">	
 	<img src="profiles/beckhu/qrcode.jpg" width="100%" />
-	<p style="text-align:center">长按二维码关注</p>
+	<p style="text-align:center">长按二维码关注</p>	
+</div>
+<div class="hidden" id="dialog-email">
+	<p style="text-align:center;font-size:18px"><a style="font-weight:bold;color:black;text-decoration:none" href="mailto:beck.hu@biz-principle.com">beck.hu@biz-principle.com</a></p>
+	<p class="iphone">长按邮箱地址可直接编写邮件</p>
+	<p class="android">长按邮箱地址可复制</p>
 </div>
 <script type="text/javascript">
+var android = /android/.test(navigator.appVersion.toLowerCase());
+
+function openEmailDialog() {
+	if(android) {
+		$('p.iphone').hide();
+	}
+	else {
+		$('p.android').hide();
+	}
+	 Modal.open({
+	    content: jQuery('#dialog-email').html(),
+	    draggable: false,
+	    width: '80%',
+	    hideClose: false
+	  });
+}
+
 function openWXDialog() {
 	 Modal.open({
 	    content: jQuery('#dialog-qrcode').html(),
