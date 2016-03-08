@@ -7,6 +7,7 @@ cardsApp.config(['$routeProvider', function($routeProvider) {
 		.when('/beckhu', {templateUrl: 'profiles/beckhu/beckhu.html', controller: 'BeckHuController'})
 		.when('/joellecao', {templateUrl: 'profiles/joellecao/joellecao.html', controller: 'JoelleCaoController'})
 		.when('/marcohuang', {templateUrl: 'profiles/marcohuang/marcohuang.html', controller: 'MarcoHuangController'})
+		.when('/tenzhang', {templateUrl: 'profiles/tenzhang/tenzhang.html', controller: 'TenZhangController'})
 		.otherwise({redirectTo: '/beckhu'});
 }]);
 
@@ -20,4 +21,8 @@ cardsApp.controller('JoelleCaoController', ['$scope', '$rootScope', function($sc
 
 cardsApp.controller('MarcoHuangController', ['$scope', '$rootScope', function($scope, $rootScope) {
 	$rootScope.pageTitle = 'MarcoHuang 黄月明 的名片';	
+}]);
+
+cardsApp.controller('TenZhangController', ['$scope', '$rootScope', function($scope, $rootScope) {
+	$rootScope.pageTitle = 'TenZhang 张亮 的名片';	
 }]);
